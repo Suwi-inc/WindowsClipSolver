@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WindowsClipSolver")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae86d43c64694f947b78061fbd602171016cb248")]
 [assembly: System.Reflection.AssemblyProductAttribute("WindowsClipSolver")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WindowsClipSolver")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -41,8 +41,8 @@
             // 
             // takeScreenShot
             // 
-            takeScreenShot.BackColor = SystemColors.ControlLight;
             resources.ApplyResources(takeScreenShot, "takeScreenShot");
+            takeScreenShot.BackColor = SystemColors.ControlLight;
             takeScreenShot.Name = "takeScreenShot";
             takeScreenShot.UseVisualStyleBackColor = false;
             takeScreenShot.Click += Capture;
@@ -63,10 +63,12 @@
             resources.ApplyResources(buttonGroup, "buttonGroup");
             buttonGroup.Name = "buttonGroup";
             buttonGroup.TabStop = false;
+            buttonGroup.DpiChangedAfterParent += buttonGroup_DpiChangedAfterParent;
             // 
             // clearButton
             // 
             clearButton.BackColor = SystemColors.ControlLight;
+            clearButton.Image = Properties.Resources.open;
             resources.ApplyResources(clearButton, "clearButton");
             clearButton.Name = "clearButton";
             clearButton.UseVisualStyleBackColor = false;

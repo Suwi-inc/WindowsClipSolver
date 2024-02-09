@@ -11,11 +11,13 @@ namespace WindowsClipSolver
         public Clipper()
         {
             InitializeComponent();
-            screenCapture = new ScreenCapture();
+            initImages();
+            
             extractText = new ExtractText();
         }
-        private void Capture(object sender, EventArgs e)
+        private new void Capture(object sender, EventArgs e)
         {
+            screenCapture = new ScreenCapture();
             screenCapture.CaptureImage();
             if (screenCapture.IsImageCaptured())
             {
@@ -66,6 +68,19 @@ namespace WindowsClipSolver
         {
             mainText.Clear();
             imageBox.Image = null;
+        }
+
+        private void initImages()
+        {
+            clearButton.Image = new Bitmap(Properties.Resources.broom, clearButton.Height - 4, clearButton.Height - 4);
+            takeScreenShot.Image = new Bitmap(Properties.Resources.camera, clearButton.Height - 4, clearButton.Height - 4);
+            openFolder.Image = new Bitmap(Properties.Resources.open, clearButton.Height - 4, clearButton.Height - 4);
+
+        }
+
+        private void buttonGroup_DpiChangedAfterParent(object sender, EventArgs e)
+        {
+            initImages();
         }
     }
 }
