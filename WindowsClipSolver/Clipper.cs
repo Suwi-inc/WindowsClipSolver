@@ -24,15 +24,13 @@ namespace WindowsClipSolver
             screenCapture.CaptureImage();
             if (screenCapture.IsImageCaptured())
             {
-                //FIX ME no need to save image before setting it to image box
                 // Retrieve the captured image
                 Bitmap capturedImage = screenCapture.GetImage();
                 // Save or process the captured image as needed
-                string imageName = string.Format("screenshot_{0}.png", DateTime.Now.ToString("yyyyMMdd_HHmmss"));
-                capturedImage.Save(imageName, System.Drawing.Imaging.ImageFormat.Png);
-
-                setImage(imageName);
-                setTextFromImage(imageName);
+                //string imageName = string.Format("screenshot_{0}.png", DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+                //capturedImage.Save(imageName, System.Drawing.Imaging.ImageFormat.Png);
+                setImage(capturedImage);
+                setTextFromImage(capturedImage);
                 setButtonsState(true);
             }
             else
@@ -50,9 +48,10 @@ namespace WindowsClipSolver
             open.Filter = "Image Files(*.jpg; *.jpeg; *.bmp;.*png)|*.jpg; *.jpeg; *.bmp; *.png";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                setImage(open.FileName);
-                imagePath = open.FileName;
-                setTextFromImage(imagePath);
+                Bitmap image = new Bitmap(open.FileName);
+                setImage(image);
+                //imagePath = open.FileName;
+                setTextFromImage(image);
                 setButtonsState(true);
             }
         }
@@ -69,16 +68,16 @@ namespace WindowsClipSolver
             }
         }
         // display image in picture box  
-        private void setImage(string path)
+        private void setImage(Bitmap image)
         {
             imageBox.SizeMode = PictureBoxSizeMode.Zoom;
-            imageBox.Image = new Bitmap(path);
+            imageBox.Image = image;
 
         }
         // display extracted text from the image in the text field 
-        private void setTextFromImage(string path)
+        private void setTextFromImage(Bitmap image)
         {
-            mainText.Text = extractText.getText(path);
+            mainText.Text = extractText.getText(image);
         }
 
         private void clearButton_Click(object sender, EventArgs e)

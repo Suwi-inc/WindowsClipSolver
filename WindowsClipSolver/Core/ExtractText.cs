@@ -6,20 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tesseract;
+using static System.Resources.ResXFileRef;
 
 namespace WindowsClipSolver.Core
 {
     internal class ExtractText
     {
      
-        public string getText(string path)
+        public string getText(string image)
         {
             var text = "";
             try
             {
                 using (var engine = new TesseractEngine(@"./tessdata", "eng", EngineMode.Default))
                 {
-                    using (var img = Pix.LoadFromFile(path))
+                    //Pix.LoadFromMemory(new ImageConverter().ConvertTo(image, typeof(byte[])) as byte[])
+                    using (var img = Pix.LoadFromFile(image))
                     {
                         using (var page = engine.Process(img))
                         {
