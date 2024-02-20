@@ -32,6 +32,8 @@
             takeScreenShot = new Button();
             mainText = new RichTextBox();
             buttonGroup = new GroupBox();
+            saveButton = new Button();
+            copyButton = new Button();
             clearButton = new Button();
             openFolder = new Button();
             imageBox = new PictureBox();
@@ -46,6 +48,7 @@
             takeScreenShot.Name = "takeScreenShot";
             takeScreenShot.UseVisualStyleBackColor = false;
             takeScreenShot.Click += Capture;
+            takeScreenShot.MouseHover += takeScreenShot_MouseHover;
             // 
             // mainText
             // 
@@ -57,6 +60,8 @@
             // buttonGroup
             // 
             buttonGroup.BackColor = SystemColors.Control;
+            buttonGroup.Controls.Add(saveButton);
+            buttonGroup.Controls.Add(copyButton);
             buttonGroup.Controls.Add(clearButton);
             buttonGroup.Controls.Add(openFolder);
             buttonGroup.Controls.Add(takeScreenShot);
@@ -64,6 +69,24 @@
             buttonGroup.Name = "buttonGroup";
             buttonGroup.TabStop = false;
             buttonGroup.DpiChangedAfterParent += buttonGroup_DpiChangedAfterParent;
+            // 
+            // saveButton
+            // 
+            saveButton.BackColor = SystemColors.ControlLight;
+            resources.ApplyResources(saveButton, "saveButton");
+            saveButton.Name = "saveButton";
+            saveButton.UseVisualStyleBackColor = false;
+            saveButton.Click += saveButton_Click;
+            saveButton.MouseHover += saveButton_MouseHover;
+            // 
+            // copyButton
+            // 
+            copyButton.BackColor = SystemColors.ControlLight;
+            resources.ApplyResources(copyButton, "copyButton");
+            copyButton.Name = "copyButton";
+            copyButton.UseVisualStyleBackColor = false;
+            copyButton.Click += copyButton_Click;
+            copyButton.MouseHover += copyButton_MouseHover;
             // 
             // clearButton
             // 
@@ -73,6 +96,7 @@
             clearButton.Name = "clearButton";
             clearButton.UseVisualStyleBackColor = false;
             clearButton.Click += clearButton_Click;
+            clearButton.MouseHover += clearButton_MouseHover;
             // 
             // openFolder
             // 
@@ -81,6 +105,7 @@
             openFolder.Name = "openFolder";
             openFolder.UseVisualStyleBackColor = false;
             openFolder.Click += openFolder_Click;
+            openFolder.MouseHover += openFolder_MouseHover;
             // 
             // imageBox
             // 
@@ -112,5 +137,7 @@
         private Button openFolder;
         private PictureBox imageBox;
         private Button clearButton;
+        private Button saveButton;
+        private Button copyButton;
     }
 }
