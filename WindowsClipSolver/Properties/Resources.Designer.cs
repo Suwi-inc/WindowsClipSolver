@@ -93,6 +93,16 @@ namespace WindowsClipSolver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap copyrText1 {
+            get {
+                object obj = ResourceManager.GetObject("copyrText1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap open {
             get {
                 object obj = ResourceManager.GetObject("open", resourceCulture);
@@ -106,6 +116,46 @@ namespace WindowsClipSolver.Properties {
         internal static System.Drawing.Bitmap saveImage {
             get {
                 object obj = ResourceManager.GetObject("saveImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap saveSmall {
+            get {
+                object obj = ResourceManager.GetObject("saveSmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap saveText1 {
+            get {
+                object obj = ResourceManager.GetObject("saveText1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap saveText2 {
+            get {
+                object obj = ResourceManager.GetObject("saveText2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap saveText3 {
+            get {
+                object obj = ResourceManager.GetObject("saveText3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

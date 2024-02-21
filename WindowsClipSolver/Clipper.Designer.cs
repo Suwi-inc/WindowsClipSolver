@@ -116,6 +116,7 @@
             menuTab.Multiline = true;
             menuTab.Name = "menuTab";
             menuTab.SelectedIndex = 0;
+            menuTab.SelectedIndexChanged += menuTab_SelectedIndexChanged;
             // 
             // tabPage1
             // 

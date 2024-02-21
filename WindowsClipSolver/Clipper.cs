@@ -12,7 +12,7 @@ namespace WindowsClipSolver
         public Clipper()
         {
             InitializeComponent();
-            initImages();
+            initImages(true);
 
             extractText = new ExtractText();
             toolTip = new ToolTip();
@@ -44,7 +44,6 @@ namespace WindowsClipSolver
         private void openFolder_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            // image filters  
             open.Filter = "Image Files(*.jpg; *.jpeg; *.bmp;.*png)|*.jpg; *.jpeg; *.bmp; *.png";
             if (open.ShowDialog() == DialogResult.OK)
             {
@@ -57,15 +56,18 @@ namespace WindowsClipSolver
         }
         private void saveButton_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveImage = new SaveFileDialog();
-            saveImage.Title = "Save Image";
-            saveImage.Filter = "Image Files(*.jpg; *.jpeg; *.bmp;.*png)|*.jpg; *.jpeg; *.bmp; *.png";
-            saveImage.FilterIndex = 2;
-            saveImage.RestoreDirectory = true;
-            if (saveImage.ShowDialog() == DialogResult.OK)
-            {
-                imageBox.Image.Save(saveImage.FileName);
-            }
+            if (menuTab.SelectedIndex == 0)
+                HandleFile.SaveImageFile(imageBox);
+            else
+                HandleFile.SaveTextFile(mainText);
+        }
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            if (menuTab.SelectedIndex == 0)
+                Clipboard.SetImage(imageBox.Image);
+            else
+                Clipboard.SetText(mainText.Text);
+
         }
         // display image in picture box  
         private void setImage(Bitmap image)
@@ -79,59 +81,46 @@ namespace WindowsClipSolver
         {
             mainText.Text = extractText.getText(image);
         }
-
         private void clearButton_Click(object sender, EventArgs e)
         {
             mainText.Clear();
             imageBox.Image = null;
             setButtonsState(false);
         }
-
-        private void initImages()
+        private void initImages(bool image)
         {
             clearButton.Image = new Bitmap(Properties.Resources.broom, clearButton.Height - 4, clearButton.Height - 4);
             takeScreenShot.Image = new Bitmap(Properties.Resources.camera, clearButton.Height - 4, clearButton.Height - 4);
             openFolder.Image = new Bitmap(Properties.Resources.open, clearButton.Height - 4, clearButton.Height - 4);
-            saveButton.Image = new Bitmap(Properties.Resources.saveImage, saveButton.Height - 4, saveButton.Height - 4);
-            copyButton.Image = new Bitmap(Properties.Resources.copyImage, copyButton.Height - 8, copyButton.Height - 8);
+            saveButton.Image = new Bitmap(image ? Properties.Resources.saveImage : Properties.Resources.saveSmall, saveButton.Height - 6, saveButton.Height - 6);
+            copyButton.Image = new Bitmap(image ? Properties.Resources.copyImage : Properties.Resources.copyrText1, copyButton.Height - 8, copyButton.Height - 8);
 
         }
-
         private void buttonGroup_DpiChangedAfterParent(object sender, EventArgs e)
         {
-            initImages();
+            initImages(menuTab.SelectedIndex == 0 ? true : false);
         }
-
         private void saveButton_MouseHover(object sender, EventArgs e)
         {
-            toolTip.Show("Save Image", saveButton);
+            toolTip.Show(menuTab.SelectedIndex == 0 ? "Save Image" : "Save Text", saveButton);
         }
-
         private void copyButton_MouseHover(object sender, EventArgs e)
         {
-            toolTip.Show("Copy Image", copyButton);
+            toolTip.Show(menuTab.SelectedIndex == 0 ? "Copy Image" : "Copy Text", copyButton);
         }
-
         private void clearButton_MouseHover(object sender, EventArgs e)
         {
             toolTip.Show("Clear", clearButton);
         }
-
         private void takeScreenShot_MouseHover(object sender, EventArgs e)
         {
             toolTip.Show("Capture Screen", takeScreenShot);
         }
-
         private void openFolder_MouseHover(object sender, EventArgs e)
         {
             toolTip.Show("Open Folder", openFolder);
         }
 
-        private void copyButton_Click(object sender, EventArgs e)
-        {
-            Clipboard.SetImage(imageBox.Image);
-
-        }
         private void setButtonsState(bool val)
         {
             clearButton.Enabled = val;
@@ -139,6 +128,11 @@ namespace WindowsClipSolver
             saveButton.Enabled = val;
         }
 
-        
+        private void menuTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //default icons are for image copy and image save, only change for text if index is 1
+            initImages(menuTab.SelectedIndex != 1);
+
+        }
     }
 }

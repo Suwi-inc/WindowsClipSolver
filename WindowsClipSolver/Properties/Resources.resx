@@ -133,4 +133,19 @@
   <data name="saveImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\saveImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="copyrText1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\copyrText1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="saveSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\saveSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="saveText1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\saveText1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="saveText2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\saveText2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="saveText3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\saveText3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
