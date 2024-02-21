@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Diagnostics;
 using Tesseract;
-using static System.Resources.ResXFileRef;
-
 namespace WindowsClipSolver.Core
 {
     internal class ExtractText
     {
-     
         public string getText(Bitmap image)
         {
             var text = "";
@@ -24,8 +15,7 @@ namespace WindowsClipSolver.Core
                     {
                         using (var page = engine.Process(img))
                         {
-                          text = page.GetText();
-                            
+                          text = page.GetText();    
                         }
                     }
                 }
@@ -33,9 +23,7 @@ namespace WindowsClipSolver.Core
             catch (Exception e)
             {
                 Trace.TraceError(e.ToString());
-                Console.WriteLine("Unexpected Error: ");
-                Console.WriteLine("Details: ");
-                Console.WriteLine(e.ToString());
+                Console.WriteLine("Unexpected Error: \n Details: \n"+e.ToString());
             }
             return text;
         }

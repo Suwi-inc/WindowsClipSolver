@@ -7,7 +7,6 @@ public class ScreenCapture : Form
 
     private Rectangle imageRect = Rectangle.Empty;
     private Bitmap? buff = null;
-
     private bool flag, pressedFlag = false;
     private int X = 0, Y = 0, WIDTH = 0, HEIGHT = 0;
     private Color selectionColor;
@@ -121,7 +120,7 @@ public class ScreenCapture : Form
     }
     public bool IsImageCaptured()
     {
-        return (buff != null);
+        return buff != null;
     }
     public Bitmap GetImage()
     {
