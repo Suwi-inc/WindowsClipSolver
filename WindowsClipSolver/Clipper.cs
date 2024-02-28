@@ -20,6 +20,7 @@ namespace WindowsClipSolver
         }
         private new void Capture(object sender, EventArgs e)
         {
+            this.Visible = false;
             screenCapture = new ScreenCapture();
             screenCapture.CaptureImage();
             if (screenCapture.IsImageCaptured())
@@ -32,6 +33,7 @@ namespace WindowsClipSolver
                 setImage(capturedImage);
                 setTextFromImage(capturedImage);
                 setButtonsState(true);
+                this.Visible = true;
             }
             else
             {
