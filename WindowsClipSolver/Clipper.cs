@@ -5,6 +5,7 @@ namespace WindowsClipSolver
 {
     public partial class Clipper : Form
     {
+        //main
         ScreenCapture? screenCapture;
         ExtractText extractText;
         string? imagePath;
