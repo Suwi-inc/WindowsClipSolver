@@ -4,7 +4,7 @@
    </p>
    
 ## Overview
-This Snipping and Text Extraction is a handy utility designed to make capturing and extracting content from your screen easier. Whether you need to capture a screenshot, select a specific area of the screen, or extract text from images, this app has you covered.
+This Snipping and Text Extraction is a handy utility designed to make capturing and extracting content from your screen easier. Whether you need to capture a screenshot, select a specific area of the screen, or extract text from images, this app has you covered
 
 ## Installation Guide
 ### 1. Clone the github repo to your prefered directory using
