@@ -1,6 +1,6 @@
 <h1 style="text-align: center;">Clip Solver by Suwi-inc</h1>
   <p style="text-align: center;">
-   <img width="100" height="100" src="WindowsClipSolver/Icons/screenshot.ico" alt="color picker" />
+   <img width="150" height="150" src="WindowsClipSolver/Icons/screenshot.ico" alt="color picker" />
    </p>
    
 ## Overview
